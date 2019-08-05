@@ -12,10 +12,12 @@
 	<groupId>com.kbase</groupId>
 	<artifactId>frontend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>frontend</name>
 	<description>Fronted project to create knowledge base for Angular/JWT/OAUTH2</description>
 
 	<build>
+		<finalName>kbase-app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
@@ -54,11 +56,26 @@
 							<goal>npm</goal>
 						</goals>
 						<configuration>
-							<arguments>run-script build</arguments>
+							<arguments>run-script build-prod</arguments>
 						</configuration>
 						<phase>generate-resources</phase>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warName>kbase-app</warName>
+					<webResources>
+						<resource>
+							<directory>
+								/src/main/web/dist/kbase-app/
+							</directory>
+						</resource>
+					</webResources>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

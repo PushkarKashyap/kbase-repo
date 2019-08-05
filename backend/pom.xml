@@ -88,11 +88,11 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
-					<warName>client-app</warName>
+					<warName>kbase-api</warName>
 				</configuration>
 			</plugin>
 
-			<plugin>
+<!-- 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
 					<execution>
@@ -105,13 +105,13 @@
 							<outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.parent.basedir}/frontend/src/main/web/dist/client-app/</directory>
+									<directory>../frontend/src/main/web/dist/kbase-app/</directory>
 								</resource>
 							</resources>
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 

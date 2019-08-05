@@ -16,7 +16,7 @@
 	<name>kbase-parent</name>
 	<description>Parent project for the Kbase project</description>
 	<modules>
-		<module>backend</module>
 		<module>frontend</module>
+		<module>backend</module>
 	</modules>
 </project>
